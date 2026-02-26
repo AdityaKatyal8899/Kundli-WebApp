@@ -49,12 +49,15 @@ def register(request: UserCreate, db: Session = Depends(get_db)):
 
 @router.post("/google")
 def google_login_route(payload: GoogleAuth, db: Session = Depends(get_db)):
-
+    print(f"[GOOGLE LOGIN ATTEMPT] Payload received: {payload}")
+    
     access_token = google_login(payload.id_token, db)
 
     if not access_token:
+        print("[GOOGLE LOGIN FAILED] Access token could not be generated")
         raise HTTPException(status_code=401, detail="Invalid Google token")
 
+    print("[GOOGLE LOGIN SUCCESS] Access token generated")
     return {
         "access_token": access_token,
         "token_type": "bearer"

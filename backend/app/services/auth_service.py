@@ -23,6 +23,7 @@ def verify_google_token(token: str):
 
 
 def google_login(id_token_str: str, db):
+    print(f"[AUTH SERVICE] Verifying token for CLIENT_ID: {GOOGLE_CLIENT_ID}")
     id_info = verify_google_token(id_token_str)
 
     if not id_info:
