@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Dark Romantic (Default) */
+  --background: #2b004b;
+  --foreground: #fce4ec;
+  --card: #3a0066;
+  --card-foreground: #fce4ec;
+  --popover: #3a0066;
+  --popover-foreground: #fce4ec;
+  --primary: #ff4fa3;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(255, 133, 193, 0.08);
+  --secondary-foreground: #ff85c1;
+  --muted: rgba(255, 133, 193, 0.05);
+  --muted-foreground: #ffb3d9;
+  --accent: #ff85c1;
+  --accent-foreground: #2b004b;
+  --destructive: #ff2d55;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 133, 193, 0.15);
+  --input: rgba(255, 133, 193, 0.05);
+  --ring: #ff4fa3;
+  --radius: 0.75rem;
+}
+
+[data-theme='light'] {
+  /* Soft Pink Light */
+  --background: #fff5fa;
+  --foreground: #5a005a;
+  --card: #ffffff;
+  --card-foreground: #5a005a;
+  --popover: #ffffff;
+  --popover-foreground: #5a005a;
+  --primary: #ff4fa3;
+  --primary-foreground: #ffffff;
+  --secondary: #fff0f6;
+  --secondary-foreground: #ff2d55;
+  --muted: #fff5fa;
+  --muted-foreground: #7a3a6a;
+  --accent: #ff4fa3;
+  --accent-foreground: #ffffff;
+  --destructive: #ff2d55;
+  --destructive-foreground: #ffffff;
+  --border: #ffd1e6;
+  --input: #ffffff;
+  --ring: #ff4fa3;
+}
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-hindi: 'Noto Sans Devanagari', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-hot-pink: #ff4fa3;
+  --color-rose-red: #ff2d55;
+  --color-soft-pink: #fff0f6;
+  --color-light-pink: #fff5fa;
+  --color-deep-text: #5a005a;
+  --color-secondary-text: #7a3a6a;
+  --color-pink-border: #ffd1e6;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
