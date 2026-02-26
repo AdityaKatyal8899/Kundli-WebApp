@@ -1,0 +1,27 @@
+Use pip freeze:
+---------------------------------------
+Inside your backend virtual environment:
+
+pip freeze > requirements.txt
+
+--------------------------------------------------------
+That will generate a full list of all installed packages.
+But There Is a Catch
+
+---------------------
+pip freeze includes:
+Direct dependencies (you installed)
+Indirect dependencies (installed automatically)
+
+Example:
+-----------
+You install:
+fastapi
+
+It also installs:
+
+    starlette
+    pydantic
+    anyio
+
+Those will appear in freeze.
